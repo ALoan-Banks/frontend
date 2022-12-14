@@ -6,7 +6,7 @@
       <h2 *ngIf="accountExists">{{ userAccount.name }}</h2>
       <h4 *ngIf="accountExists">Description: {{ userAccount.description }}</h4>
       <h4 *ngIf="accountExists">
-        Created On: {{ userAccount.creationDate | date: "short" }}
+        Created On: {{ userAccount.creationDate | date : "short" }}
       </h4>
       <button
         class="btn btn-outline-secondary btn-lg"
