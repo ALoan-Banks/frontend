@@ -7,26 +7,26 @@
         >
             <div class="flex flex-col gap-3 text-xl font-semibold">
                 <div class="flex flex-col">
-                <p class="text-sm font-normal text-gray-400">email:</p>
+                <p class="text-sm font-normal text-gray-400">Email:</p>
                 <p class="">{{ currentAccount.email }}</p>
                 </div>
-                <div *ngIf="currentAccount.firstName.length > 0" class="flex flex-col">
+                <div class="flex flex-col">
                 <p class="text-sm font-normal text-gray-400">First Name:</p>
                 <p class="">{{ currentAccount.firstName }}</p>
                 </div>
-                <div *ngIf="currentAccount.lastName.length > 0" class="flex flex-col">
+                <div class="flex flex-col">
                 <p class="text-sm font-normal text-gray-400">Last Name:</p>
                 <p class="">{{ currentAccount.lastName }}</p>
                 </div>
-                <div *ngIf="currentAccount.phoneNumber.length > 0" class="flex flex-col">
+                <div class="flex flex-col">
                 <p class="text-sm font-normal text-gray-400">Phone #:</p>
-                <p class="">{{ currentAccount.phoneNumber }}</p>
+                <p class="">{{ currentAccount.phone }}</p>
                 </div>
-                <div *ngIf="currentAccount.dateOfBirth.length > 0" class="flex flex-col">
+                <div class="flex flex-col">
                 <p class="text-sm font-normal text-gray-400">DOB:</p>
-                <p class="">{{ currentAccount.dateOfBirth | date }}</p>
+                <p class="">{{ currentAccount.dob | date }}</p>
                 </div>
-                <div *ngIf="currentAccount.address.length > 0" class="flex flex-col">
+                <div class="flex flex-col">
                 <p class="text-sm font-normal text-gray-400">address:</p>
                 <p class="">{{ currentAccount.address }}</p>
                 </div>

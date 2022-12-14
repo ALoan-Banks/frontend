@@ -18,13 +18,16 @@ export class UserprofileComponent implements OnInit {
     password: '',
     firstName: '',
     lastName: '',
-    dateOfBirth: '',
+    dob: '',
     address: '',
-    phoneNumber: '',
+    phone: '',
   };
 
   ngOnInit(): void {
-    this.UserService.getUserAccount().subscribe();
+    this.UserService.getUserAccount().subscribe((user) => {
+      this.currentAccount = user;
+      console.log(user);
+    });
   }
 
 }

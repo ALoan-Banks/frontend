@@ -4,8 +4,8 @@ export class User {
     password: string;
     firstName: string;
     lastName: string;
-    phoneNumber: string;
-    dateOfBirth: string;
+    phone: string;
+    dob: string;
     address: string;
 
     constructor(
@@ -14,8 +14,8 @@ export class User {
         _password: string,
         _firstName: string,
         _lastName: string,
-        _phoneNumber: string,
-        _dateOfBirth: string,
+        _phone: string,
+        _dob: string,
         _address: string
       ) {
         this.id = _id;
@@ -23,8 +23,8 @@ export class User {
         this.password = _password;
         this.firstName = _firstName;
         this.lastName = _lastName;
-        this.phoneNumber = _phoneNumber;
-        this.dateOfBirth = _dateOfBirth;
+        this.phone = _phone;
+        this.dob = _dob;
         this.address = _address;
 
     }
