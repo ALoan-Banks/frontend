@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -19,6 +18,9 @@ export class NavbarComponent{
     this.router.navigateByUrl('/login');
   }
 
-  profile(){}
+  profile(){
+    localStorage.getItem('current-user');
+    this.router.navigateByUrl('/user/profile');
+  }
 
 }

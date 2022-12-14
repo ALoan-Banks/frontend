@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
-import { AccountService } from 'src/app/services/account.service';
-
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-userprofile',
@@ -11,7 +10,7 @@ import { AccountService } from 'src/app/services/account.service';
 })
 export class UserprofileComponent implements OnInit {
 
-  constructor(private AccountService: AccountService, private router: Router) { }
+  constructor(private UserService: UserService, private router: Router) { }
 
   currentAccount: User = { //waiting for Sergio to update User model on frontend
     id: 0,
@@ -25,7 +24,7 @@ export class UserprofileComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.AccountService.getAccount().subscribe();
+    this.UserService.getUserAccount().subscribe();
   }
 
 }
