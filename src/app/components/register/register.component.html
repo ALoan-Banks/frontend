@@ -1,22 +1,133 @@
 <div class="main-wrap">
-    <div class="form-wrap">
-        <img id="revImg" src="../../../assets/images/rev-logo.png" alt="Revature">
-        <h2>New Banking Account Registration</h2>
-        <form class="row g-3">
-            <div class="input-group mb-3">
-              <div class="input-group">
-                <input type="text" class="form-control" [formControl]="email" placeholder="Email Address" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
-              </div>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group">
-                  <input type="password" class="form-control" [formControl]="password" id="validationDefaultPassword" placeholder="Password"  aria-describedby="inputGroupPrepend2" required>
-                </div>
-              </div>
-            <div class="col-12">
-              <button class="btn btn-success btn-lg" type="submit" (click)="attemptRegister(email.value, password.value);">Register</button>
-            </div>
-          </form>
-          <p>{{noticeMessage}}</p>
-    </div>
+  <div class="form-wrap">
+    <img id="revImg" src="../../../assets/images/rev-logo.png" alt="Revature" />
+    <h2>New Banking Account Registration</h2>
+    <form class="row g-3" [formGroup]="form" (ngSubmit)="attemptRegister()">
+      <!-- email -->
+      <div class="input-group mb-3">
+        <label for="validationDefaultUsername"
+          >Email Address:
+          <span
+            *ngIf="
+              form.controls['email'].invalid &&
+              !form.controls['email'].touched &&
+              form.controls['email'].value.length > 0
+            "
+          >
+            Please enter a valid email address.
+          </span></label
+        >
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="email"
+            placeholder="Email Address"
+            id="validationDefaultUsername"
+            aria-describedby="inputGroupPrepend2"
+            (blur)="resetTouched()"
+          />
+        </div>
+      </div>
+
+      <!-- password -->
+      <div class="input-group mb-3">
+        <label for="validationDefaultPassword">Password:</label>
+        <div class="input-group">
+          <input
+            type="password"
+            class="form-control"
+            formControlName="password"
+            id="validationDefaultPassword"
+            placeholder="Password"
+            aria-describedby="inputGroupPrepend2"
+          />
+        </div>
+      </div>
+
+      <!-- date of birth -->
+      <div class="input-group mb-3">
+        <label for="validationDefaultDateOfBirth"
+          >Date of Birth: <span>e.x. MM-DD-YY</span></label
+        >
+        <div class="input-group">
+          <input
+            type="text"
+            placeholder="MM-DD-YY"
+            formControlName="dob"
+            id="validationDefaultDateOfBirth"
+            aria-describedby="inputGroupPrepend2"
+          />
+        </div>
+      </div>
+
+      <!-- first name -->
+      <div class="input-group mb-3">
+        <label for="validationDefaultFirstName">First Name:</label>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="firstName"
+            id="validationDefaultFirstName"
+            placeholder="First Name"
+            aria-describedby="inputGroupPrepend2"
+          />
+        </div>
+      </div>
+
+      <!-- last name -->
+      <div class="input-group mb-3">
+        <label for="validationDefaultLastName">Last Name:</label>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="lastName"
+            id="validationDefaultLastName"
+            placeholder="Last Name"
+            aria-describedby="inputGroupPrepend2"
+          />
+        </div>
+      </div>
+
+      <!-- phone -->
+      <div class="input-group mb-3">
+        <label for="validationDefaultPhoneNumber"
+          >Phone Number: <span>e.x. 123-456-7890</span></label
+        >
+        <div class="input-group">
+          <input
+            type="tel"
+            class="form-control"
+            formControlName="phone"
+            id="validationDefaultPhoneNumber"
+            placeholder="e.x. 123-456-7890"
+            aria-describedby="inputGroupPrepend2"
+          />
+        </div>
+      </div>
+
+      <!-- address -->
+      <div class="input-group mb-3">
+        <label for="validationDefaultAddress">Address:</label>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="address"
+            id="validationDefaultAddress"
+            placeholder="Address"
+            aria-describedby="inputGroupPrepend2"
+          />
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div class="col-12">
+        <button class="btn btn-success btn-lg" type="submit">Register</button>
+      </div>
+    </form>
+    <p>{{ noticeMessage }}</p>
+  </div>
 </div>
