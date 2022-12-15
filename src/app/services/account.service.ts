@@ -35,6 +35,19 @@ export class AccountService {
     );
   }
 
+  getRecentTransactions(
+    accountId: string,
+    limit: number
+  ): Observable<Transaction[]> {
+    return this.http.get<Transaction[]>(
+      this.accountUrl + `/${accountId}/${limit}/transactionTop`,
+      {
+        headers: environment.headers,
+        withCredentials: environment.withCredentials,
+      }
+    );
+  }
+
   getIncomes(accountId: string): Observable<Transaction[]> {
     return this.http.get<Transaction[]>(
       this.accountUrl + `/${accountId}/income`,
@@ -42,7 +55,7 @@ export class AccountService {
         headers: environment.headers,
         withCredentials: environment.withCredentials,
       }
-    )
+    );
   }
 
   upsertAccount(account: Account): Observable<Account> {

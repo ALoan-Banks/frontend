@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { IncomeComponent } from './components/income/income.component';
+import { RecentTransactionsComponent } from './components/recent-transactions/recent-transactions.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { IncomeComponent } from './components/income/income.component';
     AccountComponent,
     HomeComponent,
     NavbarComponent,
-    IncomeComponent
+    IncomeComponent,
+    RecentTransactionsComponent
   ],
   imports: [
     BrowserModule,
