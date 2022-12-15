@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, ObservedValuesFromArray } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Account } from '../models/account';
 import { Transaction } from '../models/transaction';
@@ -33,6 +33,16 @@ export class AccountService {
         withCredentials: environment.withCredentials,
       }
     );
+  }
+
+  getIncomes(accountId: string): Observable<Transaction[]> {
+    return this.http.get<Transaction[]>(
+      this.accountUrl + `/${accountId}/income`,
+      {
+        headers: environment.headers,
+        withCredentials: environment.withCredentials,
+      }
+    )
   }
 
   upsertAccount(account: Account): Observable<Account> {
