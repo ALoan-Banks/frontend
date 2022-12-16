@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  url: 'http://localhost:8080/',
+  url: 'http://aloanbanksapp-env.eba-yuubmsje.us-east-1.elasticbeanstalk.com/',
   headers: {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': 'http://localhost:4200',
