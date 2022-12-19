@@ -37,5 +37,18 @@
     "postcss": "^8.4.20",
     "tailwindcss": "^3.2.4",
     "typescript": "~4.7.2"
-  }
+  },
+  "description": "main frontend production pipeline",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ALoan-Banks/frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ALoan-Banks/frontend/issues"
+  },
+  "homepage": "https://github.com/ALoan-Banks/frontend#readme"
 }
