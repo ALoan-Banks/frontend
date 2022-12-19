@@ -6,10 +6,9 @@ import { AccountService } from 'src/app/services/account.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-
   accountExists: boolean = false;
   createFormOpen: boolean = false;
   userAccount!: Account;
@@ -20,7 +19,7 @@ export class HomeComponent implements OnInit {
   balance: FormControl = new FormControl(['']);
   accountDescription: FormControl = new FormControl(['']);
 
-  constructor(private accountService: AccountService) { }
+  constructor(private accountService: AccountService) {}
 
   ngOnInit(): void {
     this.accountService.getAccount().subscribe({
@@ -34,19 +33,20 @@ export class HomeComponent implements OnInit {
         );
       },
       error: () => {
-        this.accountMessage = "No account was found, please create one!"
+        this.accountMessage = 'No account was found, please create one!';
       },
       complete: () => {
-        this.accountMessage = "Account was successfully retrieved from the database."
+        this.accountMessage =
+          'Account was successfully retrieved from the database.';
         this.accountExists = true;
         const num = this.userAccount.balance;
         this.userAccount.balance = +num.toFixed(2);
         this.accountName.setValue(this.userAccount.name);
         this.balance.setValue(this.userAccount.balance);
         this.accountDescription.setValue(this.userAccount.description);
-        this.accountService.accountId = ''+this.userAccount.id;
-        localStorage.setItem('current-account', ''+this.userAccount.id);
-      }
+        this.accountService.accountId = '' + this.userAccount.id;
+        localStorage.setItem('current-account', '' + this.userAccount.id);
+      },
     });
   }
 
@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
   }
 
   attemptUpsertAccount(name: string, balance: number, description: string) {
-    if(!this.userAccount) {
+    if (!this.userAccount) {
       this.userAccount = new Account(0, name, balance, description, null);
     } else {
       this.userAccount.name = name;
@@ -75,10 +75,9 @@ export class HomeComponent implements OnInit {
         this.accountExists = true;
         this.createFormOpen = false;
         this.accountMessage = 'Account was saved!';
-        this.accountService.accountId = ''+this.userAccount.id;
-        localStorage.setItem('current-account', ''+this.userAccount.id);
-      }
-    })
+        this.accountService.accountId = '' + this.userAccount.id;
+        localStorage.setItem('current-account', '' + this.userAccount.id);
+      },
+    });
   }
-
 }
