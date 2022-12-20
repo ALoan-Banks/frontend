@@ -8,8 +8,9 @@ To install and set up the project, follow these steps:
 - Navigate to the project directory using cd frontend.
 - Install the dependencies using npm install.
 - Start the development server using npm start.
-- Usage
-- To use the project, follow these steps:
+
+#Usage
+To use the project, follow these steps:
 
 Open your web browser and go to http://localhost:4200.
 Use the navigation menu to access the various pages of the application.
