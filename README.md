@@ -9,7 +9,7 @@ To install and set up the project, follow these steps:
 - Install the dependencies using npm install.
 - Start the development server using npm start.
 
-#Usage
+# Usage
 To use the project, follow these steps:
 
 Open your web browser and go to http://localhost:4200.
