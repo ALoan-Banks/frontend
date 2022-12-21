@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
   form: FormGroup = new FormGroup({});
 
   noticeMessage: string = '';
+  isDisabled: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -73,5 +74,13 @@ export class RegisterComponent implements OnInit {
           this.router.navigateByUrl('/login');
         },
       });
+  }
+
+  onClick() {
+    this.isDisabled = true;
+    this.attemptRegister();
+    setTimeout(() => {
+      this.isDisabled = false;
+    }, 3000); // 3 seconds
   }
 }
