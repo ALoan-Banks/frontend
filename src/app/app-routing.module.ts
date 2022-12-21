@@ -6,6 +6,7 @@ import { AccountComponent } from './components/account/account.component';
 import { HomeComponent } from './components/home/home.component';
 import { IncomeComponent } from './components/income/income.component';
 import { RecentTransactionsComponent } from './components/recent-transactions/recent-transactions.component';
+import { UserprofileComponent } from './components/userprofile/userprofile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'income', component: IncomeComponent },
   { path: 'recent/transactions', component: RecentTransactionsComponent },
+  { path: 'user/profile', component: UserprofileComponent }
 ];
 
 @NgModule({
