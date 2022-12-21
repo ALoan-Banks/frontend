@@ -1,26 +1,33 @@
 <app-navbar></app-navbar>
-<div class="home-wrap">
-  <div class="account-wrap">
-    <h2>Recent Transactions:</h2>
-    <p>
-      I want to see the last
-      <select [(ngModel)]="selectedOption" (change)="onOptionChanged()">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option [(ngModel)]="selectedOption" value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-      </select>
-      transactions
+<div class="p-4">
+  <div class="dark:bg-slate-700 rounded-lg p-4 flex flex-col gap-2">
+    <p class="dark:text-gray-100 font-semibold text-2xl">
+      Recent Transactions:
+      <span class="font-normal text-lg">
+        I want to see the last
+        <select
+          class="text-slate-800"
+          [(ngModel)]="selectedOption"
+          (change)="onOptionChanged()"
+        >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option [(ngModel)]="selectedOption" value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+        transactions
+      </span>
     </p>
-    <div class="account-card">
+
+    <div class="">
       <table class="table table-striped">
-        <caption>
+        <caption class="invisible">
           Display Recent Transactions
         </caption>
         <thead>

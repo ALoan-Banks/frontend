@@ -1,102 +1,92 @@
 <app-navbar></app-navbar>
 
-<!-- Add the Tailwind CSS classes to the HTML elements -->
-<div class="p-3">
-<div class="bg-orange-500 text-white font-bold rounded-full py-4 px-8 shadow-lg">
-  <h1 class="text-3xl">User Profile</h1>
-</div>
-</div>
-<div class="p-9 ">
-<div class="px-4 py-6 mx-auto max-w-sm bg-orange-500 rounded-lg shadow-xl ">
-  <div class="text-center mb-4">
-    <h2 class="text-xl font-bold text-white">{{ currentAccount.firstName }} {{ currentAccount.lastName }}</h2>
-    <p class="text-sm text-white font-weight: 600;">Email: {{ currentAccount.email }}</p>
-  </div>
-
-  <div class="bg-gray-200 p-2 rounded-lg">
-    <h3 class="text-lg font-bold text-gray-800 mb-3">Personal Information</h3>
-    <p class="text-sm text-gray-600 mb-1">Phone: {{ currentAccount.phone }}</p>
-    <p class="text-sm text-gray-600 mb-1">Address: {{ currentAccount.address }}</p>
-    <p class="text-sm text-gray-600 mb-1">Date of Birth: {{ currentAccount.dob | date }}</p>
-    <!-- <p class="text-sm text-gray-600 mb-2">Location: New York, NY</p> -->
-  </div>
-</div>
-
-  <!-- <div class="bg-gray-200 p-4 mt-4 rounded-lg">
-    <h3 class="text-lg font-bold text-gray-800 mb-2">Preferences</h3>
-    <p class="text-sm text-gray-600 mb-2">Notification preferences: Email</p>
-    <p class="text-sm text-gray-600 mb-2">Theme: Light</p>
-  </div>
-
-  <div class="bg-gray-200 p-4 mt-4 rounded-lg">
-    <h3 class="text-lg font-bold text-gray-800 mb-2">Security</h3>
-    <p class="text-sm text-gray-600 mb-2">Two-factor authentication: Enabled</p>
-  </div>
-</div> -->
-
-<!-- <div class="bg-gradient-to-r from-cyan-500 to-blue-500">
 <div class="p-4">
-<div class="overflow-hidden bg-white shadow sm:rounded-lg">
-    <div class="px-4 py-4 sm:px-6">
-      <h3 class="text-lg font-medium leading-6 text-black-900">Customer Profile</h3>
+  <div class="flex flex-col bg-gray-100 dark:bg-slate-700 rounded-lg shadow-lg">
+    <!-- Add the Tailwind CSS classes to the HTML elements -->
+    <div class="flex justify-center items-center py-5">
+      <p
+        class="font-bold text-slate-800 dark:text-gray-100 text-4xl md:text-5xl"
+      >
+        Customer Profile
+      </p>
     </div>
-    <div class="border-t border-gray-200">
-      <dl>
-        <div class="bg-gray-50 px-3 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-          <dt class="text-md font-weight: 700 text-black-500">Email:</dt>
-          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ currentAccount.email }}</dd>
+
+    <div class="flex justify-center items-center py-5">
+      <div
+        class="grid grid-cols-1 min-w-[90%] md:min-w-[40%] gap-4 bg-[#ffddcb] p-5 rounded-lg"
+      >
+        <!-- container -->
+        <div class="flex flex-col gap-6">
+          <label for="" class="text-xl font-semibold text-[#5d4b41]/60"
+            >Account Info</label
+          >
+          <div class="flex flex-col gap-y-9 gap-x-14">
+            <!-- currentAccount.id-->
+            <div
+              class="flex flex-col justify-center bg-[#ffe6d9] p-2 rounded-lg"
+            >
+              <p class="font-semibold font-xl">Account #:</p>
+              <p class="text-lg">
+                {{ currentAccount.id }}
+              </p>
+            </div>
+            <!-- currentAccount.firstName -->
+            <div
+              class="flex flex-col justify-center bg-[#ffe6d9] p-2 rounded-lg"
+            >
+              <p class="font-semibold font-xl">First Name:</p>
+              <p class="text-lg">
+                {{ currentAccount.firstName }}
+              </p>
+            </div>
+            <!-- currentAccount.lastName -->
+            <div
+              class="flex flex-col justify-center bg-[#ffe6d9] p-2 rounded-lg"
+            >
+              <p class="font-semibold font-xl">Last Name:</p>
+              <p class="text-lg">
+                {{ currentAccount.lastName }}
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="bg-white px-3 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-          <dt class="text-md font-weight: 700 text-gray-600">First Name:</dt>
-          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ currentAccount.firstName }}</dd>
+
+        <!-- CONTAINER -->
+        <div class="flex flex-col gap-6">
+          <label for="" class="text-xl font-semibold text-[#5d4b41]/60"
+            >Personal Info</label
+          >
+          <div class="flex flex-col gap-y-9 gap-x-8">
+            <!-- currentAccount.email -->
+            <div
+              class="flex flex-col justify-center bg-[#ffe6d9] p-2 rounded-lg"
+            >
+              <p class="font-semibold font-xl">Email:</p>
+              <p class="text-lg">
+                {{ currentAccount.email }}
+              </p>
+            </div>
+            <!-- currentAccount.address -->
+            <div
+              class="flex flex-col justify-center bg-[#ffe6d9] p-2 rounded-lg"
+            >
+              <p class="font-semibold font-xl">Address:</p>
+              <p class="text-lg">
+                {{ currentAccount.address }}
+              </p>
+            </div>
+            <!-- currentAccount.phoneNumber -->
+            <div
+              class="flex flex-col justify-center bg-[#ffe6d9] p-2 rounded-lg"
+            >
+              <p class="font-semibold font-xl">Phone Number:</p>
+              <p class="text-lg">
+                {{ currentAccount.phone }}
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="bg-gray-50 px-3 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-          <dt class="text-md font-weight: 700 text-black-500">Last Name:</dt>
-          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ currentAccount.lastName }}</dd>
-        </div>
-        <div class="bg-white px-3 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-          <dt class="text-md font-weight: 700 text-black-500">Phone #:</dt>
-          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ currentAccount.phone }}</dd>
-        </div>
-        <div class="bg-gray-50 px-3 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-          <dt class="text-md font-weight: 700 text-black-500">Date Of Birth:</dt>
-          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ currentAccount.dob | date }}</dd>
-        </div>
-        <div class="bg-white px-3 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-          <dt class="text-md font-weight: 700 text-black-500">Address:</dt>
-          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{{ currentAccount.address }}</dd>
-        </div>
-      </dl>
+      </div>
     </div>
   </div>
-</div> -->
-
-<!-- <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-  <h1 class="text-2xl font-bold mb-4 text-gray-800">User Profile</h1>
-
-  <img src="user-profile.jpg" alt="User profile" class="w-48 h-48 rounded-full mb-4">
-
-  <h2 class="text-xl font-semibold mb-2 text-gray-700">John Doe</h2>
-
-  <p class="mb-4 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum porttitor velit, vel tincidunt sem convallis et. Aliquam erat volutpat.</p>
-
-  <div class="mb-4">
-    <h3 class="text-lg font-semibold mb-2 text-gray-700">Contact Information</h3>
-    <ul class="list-none">
-      <li class="mb-2"><span class="font-bold text-gray-700">Email:</span> john.doe@example.com</li>
-      <li class="mb-2"><span class="font-bold text-gray-700">Phone:</span> (123) 456-7890</li>
-      <li class="mb-2"><span class="font-bold text-gray-700">Address:</span> 123 Main Street, Anytown, USA 12345</li>
-    </ul>
-  </div>
-
-  <div>
-    <h3 class="text-lg font-semibold mb-2 text-gray-700">Social Media</h3>
-    <ul class="list-none">
-      <li class="mb-2"><a href="#" class="text-blue-500 hover:text-blue-700">Facebook</a></li>
-      <li class="mb-2"><a href="#" class="text-blue-500 hover:text-blue-700">Twitter</a></li>
-      <li class="mb-2"><a href="#" class="text-blue-500 hover:text-blue-700">Instagram</a></li>
-    </ul>
-  </div>
-</div> -->
-
-
+</div>
