@@ -1,11 +1,17 @@
-<div class="main-wrap">
-  <div class="form-wrap">
+<div class="flex justify-center items-center p-4 min-h-screen">
+  <div
+    class="flex flex-col justify-between items-center bg-white shadow-md rounded-lg gap-3 p-4"
+  >
     <img id="revImg" src="../../../assets/images/rev-logo.png" alt="Revature" />
-    <h2>New Banking Account Registration</h2>
-    <form class="row g-3" [formGroup]="form" (ngSubmit)="attemptRegister()">
+    <h2 class="font-semibold py-3">New Banking Account Registration</h2>
+    <form
+      class="flex flex-col gap-6"
+      [formGroup]="form"
+      (ngSubmit)="attemptRegister()"
+    >
       <!-- email -->
-      <div class="input-group mb-3">
-        <label for="validationDefaultUsername"
+      <div class="flex flex-col gap-2">
+        <label class="font-medium" for="validationDefaultUsername"
           >Email Address:
           <span
             *ngIf="
@@ -17,10 +23,10 @@
             Please enter a valid email address.
           </span></label
         >
-        <div class="input-group">
+        <div class="">
           <input
             type="text"
-            class="form-control"
+            class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 placeholder:text-lg placeholder:font-semibold focus:outline-none"
             formControlName="email"
             placeholder="Email Address"
             id="validationDefaultUsername"
@@ -31,12 +37,14 @@
       </div>
 
       <!-- password -->
-      <div class="input-group mb-3">
-        <label for="validationDefaultPassword">Password:</label>
-        <div class="input-group">
+      <div class="flex flex-col gap-2">
+        <label class="font-medium" for="validationDefaultPassword"
+          >Password:</label
+        >
+        <div class="">
           <input
             type="password"
-            class="form-control"
+            class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 placeholder:text-lg placeholder:font-semibold focus:outline-none"
             formControlName="password"
             id="validationDefaultPassword"
             placeholder="Password"
@@ -46,13 +54,15 @@
       </div>
 
       <!-- date of birth -->
-      <div class="input-group mb-3">
-        <label for="validationDefaultDateOfBirth"
-          >Date of Birth: <span>e.x. MM-DD-YY</span></label
+      <div class="flex flex-col gap-2">
+        <label class="font-medium" for="validationDefaultDateOfBirth"
+          >Date of Birth:
+          <span class="text-gray-400 text-xs">e.x. MM-DD-YY</span></label
         >
-        <div class="input-group">
+        <div class="">
           <input
             type="text"
+            class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 placeholder:text-lg placeholder:font-semibold focus:outline-none"
             placeholder="MM-DD-YY"
             formControlName="dob"
             id="validationDefaultDateOfBirth"
@@ -62,12 +72,14 @@
       </div>
 
       <!-- first name -->
-      <div class="input-group mb-3">
-        <label for="validationDefaultFirstName">First Name:</label>
-        <div class="input-group">
+      <div class="flex flex-col gap-2">
+        <label class="font-medium" for="validationDefaultFirstName"
+          >First Name:</label
+        >
+        <div class="">
           <input
             type="text"
-            class="form-control"
+            class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 placeholder:text-lg placeholder:font-semibold focus:outline-none"
             formControlName="firstName"
             id="validationDefaultFirstName"
             placeholder="First Name"
@@ -77,12 +89,14 @@
       </div>
 
       <!-- last name -->
-      <div class="input-group mb-3">
-        <label for="validationDefaultLastName">Last Name:</label>
-        <div class="input-group">
+      <div class="flex flex-col gap-2">
+        <label class="font-medium" for="validationDefaultLastName"
+          >Last Name:</label
+        >
+        <div class="">
           <input
             type="text"
-            class="form-control"
+            class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 placeholder:text-lg placeholder:font-semibold focus:outline-none"
             formControlName="lastName"
             id="validationDefaultLastName"
             placeholder="Last Name"
@@ -92,14 +106,15 @@
       </div>
 
       <!-- phone -->
-      <div class="input-group mb-3">
-        <label for="validationDefaultPhoneNumber"
-          >Phone Number: <span>e.x. 123-456-7890</span></label
+      <div class="flex flex-col gap-2">
+        <label class="font-medium" for="validationDefaultPhoneNumber"
+          >Phone Number:
+          <span class="text-gray-400 text-xs">e.x. 123-456-7890</span></label
         >
-        <div class="input-group">
+        <div class="">
           <input
             type="tel"
-            class="form-control"
+            class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 placeholder:text-lg placeholder:font-semibold focus:outline-none"
             formControlName="phone"
             id="validationDefaultPhoneNumber"
             placeholder="e.x. 123-456-7890"
@@ -109,12 +124,14 @@
       </div>
 
       <!-- address -->
-      <div class="input-group mb-3">
-        <label for="validationDefaultAddress">Address:</label>
-        <div class="input-group">
+      <div class="flex flex-col gap-2">
+        <label class="font-medium" for="validationDefaultAddress"
+          >Address:</label
+        >
+        <div class="">
           <input
             type="text"
-            class="form-control"
+            class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 placeholder:text-lg placeholder:font-semibold focus:outline-none"
             formControlName="address"
             id="validationDefaultAddress"
             placeholder="Address"
@@ -124,8 +141,13 @@
       </div>
 
       <!-- buttons -->
-      <div class="col-12">
-        <button class="btn btn-success btn-lg" type="submit">Register</button>
+      <div class="flex flex-col gap-2">
+        <button
+          class="bg-[#F26A26] px-3 py-1 rounded-lg font-semibold"
+          type="submit"
+        >
+          Register
+        </button>
       </div>
     </form>
     <p>{{ noticeMessage }}</p>
