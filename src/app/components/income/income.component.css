@@ -35,7 +35,7 @@ h1 {
     margin-right: auto;
     margin-left: auto;
     border-style: inset;
-    border-width: thick;
+    border-width: thin;
     margin-bottom: 25px;
     text-align: left;
     padding: 10px;
@@ -43,7 +43,7 @@ h1 {
 }
 
 .account-card:hover {
-    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    box-shadow: 0 10px 25px rgba(239, 215, 215, 0.2);
     transform: translate3d(10px,0,0);
 }
 

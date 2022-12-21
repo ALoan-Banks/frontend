@@ -1,13 +1,13 @@
 <app-navbar></app-navbar>
-<div class="home-wrap">
-    <div class="account-wrap">
-        <h2>Income Details: {{accountName.value}}</h2>
-        <h2 id="balance" [style]="balanceStyle">Current Balance: ${{balance.value}}</h2>
-        <div class="account-card"*ngFor="let txn of transactions">
-            <h2>{{txn.description}}</h2>
-            <h1>{{txn.type}}: ${{txn.amount}}</h1>
+<div class="home-wrap p-4">
+    <div class="flex justify-start bg-red-300 dark:bg-slate-700 rounded-lg flex-col w-full p-5 dark:text-gray-100">
+        <h2 class="font-bold text-xl">Income Details: {{accountName.value}}</h2>
+        <h2 class="flex flex-row font-bold text-xl justify-center" [style]="balanceStyle">Balance: ${{balance.value}}</h2>
+        <div class="account-card rounded-lg"*ngFor="let txn of transactions">
+            <h2 class="font-bold text-xl p-3">{{txn.description}}</h2>
+            <h1 class="font-bold text-xl p-4">{{txn.type}}: ${{txn.amount}}</h1>
         </div>
-        <p>{{accountMessage}}</p>
+        <p class="flex flex-row justify-center">{{accountMessage}}</p>
         
     </div>
 </div>
