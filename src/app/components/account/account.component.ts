@@ -9,16 +9,15 @@ import { AccountService } from 'src/app/services/account.service';
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
-  styleUrls: ['./account.component.css']
+  styleUrls: ['./account.component.css'],
 })
 export class AccountComponent implements OnInit {
-
   txnAmount: FormControl = new FormControl(['']);
   txnDescription: FormControl = new FormControl(['']);
   accountId: string = '';
   txnType: FormControl = new FormControl(['']);
   userAccount!: Account;
-  
+
   accountName: FormControl = new FormControl(['']);
   balance: FormControl = new FormControl(['']);
   accountDescription: FormControl = new FormControl(['']);
@@ -31,7 +30,7 @@ export class AccountComponent implements OnInit {
 
   transactions: Transaction[] = [];
 
-  constructor(private accountService: AccountService) { 
+  constructor(private accountService: AccountService) {
     this.accountId = accountService.accountId;
   }
 
@@ -52,7 +51,7 @@ export class AccountComponent implements OnInit {
       complete: () => {
         this.getAccount();
         this.getAllTransactions();
-      }
+      },
     });
   }
 
@@ -74,9 +73,8 @@ export class AccountComponent implements OnInit {
           txn.amount = +num.toFixed(2);
         });
         this.transactions.reverse();
-      }
-    }
-    );
+      },
+    });
   }
 
   getAccount() {
@@ -91,28 +89,28 @@ export class AccountComponent implements OnInit {
         );
       },
       error: () => {
-        this.accountMessage = "No account was found, please create one!"
+        this.accountMessage = 'No account was found, please create one!';
       },
       complete: () => {
-        this.accountMessage = "Account was successfully retrieved from the database.";
+        this.accountMessage =
+          'Account was successfully retrieved from the database.';
         const num = this.userAccount.balance;
         this.userAccount.balance = +num.toFixed(2);
 
-        if(num < 0) {
+        if (num < 0) {
           this.balanceStyle = {
-            color: '#ff0000'
-          }
+            color: '#ff0000',
+          };
         } else {
           this.balanceStyle = {
-            color: '#5dff5d'
-          }
+            color: '#5dff5d',
+          };
         }
 
         this.accountName.setValue(this.userAccount.name);
         this.balance.setValue(this.userAccount.balance);
         this.accountDescription.setValue(this.userAccount.description);
-      }
+      },
     });
   }
-
 }
