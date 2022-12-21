@@ -11,6 +11,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { IncomeComponent } from './components/income/income.component';
+import { RecentTransactionsComponent } from './components/recent-transactions/recent-transactions.component';
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
 
 @NgModule({
@@ -21,7 +23,9 @@ import { UserprofileComponent } from './components/userprofile/userprofile.compo
     AccountComponent,
     HomeComponent,
     NavbarComponent,
-    UserprofileComponent,
+    IncomeComponent,
+    RecentTransactionsComponent,
+    UserprofileComponent
   ],
   imports: [
     BrowserModule,
