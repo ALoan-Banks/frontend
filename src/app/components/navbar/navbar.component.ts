@@ -4,13 +4,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
-export class NavbarComponent{
-
+export class NavbarComponent {
   loggedIn: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   logout() {
     localStorage.removeItem('current-user');
@@ -20,9 +19,10 @@ export class NavbarComponent{
 
   income() {
     this.router.navigateByUrl('/income');
-  profile(){
+  }
+
+  profile() {
     localStorage.getItem('current-user');
     this.router.navigateByUrl('/user/profile');
   }
-
 }
