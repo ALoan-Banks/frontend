@@ -1,0 +1,92 @@
+<app-navbar></app-navbar>
+
+<div class="p-4">
+  <div class="flex flex-col bg-gray-100 dark:bg-slate-700 rounded-lg shadow-lg">
+    <!-- Add the Tailwind CSS classes to the HTML elements -->
+    <div class="flex justify-center items-center py-5">
+      <p
+        class="font-bold text-slate-800 dark:text-gray-100 text-4xl md:text-5xl"
+      >
+        Customer Profile
+      </p>
+    </div>
+
+    <div class="flex justify-center items-center py-5">
+      <div
+        class="grid grid-cols-1 min-w-[90%] md:min-w-[40%] gap-4 bg-[#ffddcb] p-5 rounded-lg"
+      >
+        <!-- container -->
+        <div class="flex flex-col gap-6">
+          <label for="" class="text-xl font-semibold text-[#5d4b41]/60"
+            >Account Info</label
+          >
+          <div class="flex flex-col gap-y-9 gap-x-14">
+            <!-- currentAccount.id-->
+            <div
+              class="flex flex-col justify-center bg-[#ffe6d9] p-2 rounded-lg"
+            >
+              <p class="font-semibold font-xl">Account #:</p>
+              <p class="text-lg">
+                {{ currentAccount.id }}
+              </p>
+            </div>
+            <!-- currentAccount.firstName -->
+            <div
+              class="flex flex-col justify-center bg-[#ffe6d9] p-2 rounded-lg"
+            >
+              <p class="font-semibold font-xl">First Name:</p>
+              <p class="text-lg">
+                {{ currentAccount.firstName }}
+              </p>
+            </div>
+            <!-- currentAccount.lastName -->
+            <div
+              class="flex flex-col justify-center bg-[#ffe6d9] p-2 rounded-lg"
+            >
+              <p class="font-semibold font-xl">Last Name:</p>
+              <p class="text-lg">
+                {{ currentAccount.lastName }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTAINER -->
+        <div class="flex flex-col gap-6">
+          <label for="" class="text-xl font-semibold text-[#5d4b41]/60"
+            >Personal Info</label
+          >
+          <div class="flex flex-col gap-y-9 gap-x-8">
+            <!-- currentAccount.email -->
+            <div
+              class="flex flex-col justify-center bg-[#ffe6d9] p-2 rounded-lg"
+            >
+              <p class="font-semibold font-xl">Email:</p>
+              <p class="text-lg">
+                {{ currentAccount.email }}
+              </p>
+            </div>
+            <!-- currentAccount.address -->
+            <div
+              class="flex flex-col justify-center bg-[#ffe6d9] p-2 rounded-lg"
+            >
+              <p class="font-semibold font-xl">Address:</p>
+              <p class="text-lg">
+                {{ currentAccount.address }}
+              </p>
+            </div>
+            <!-- currentAccount.phoneNumber -->
+            <div
+              class="flex flex-col justify-center bg-[#ffe6d9] p-2 rounded-lg"
+            >
+              <p class="font-semibold font-xl">Phone Number:</p>
+              <p class="text-lg">
+                {{ currentAccount.phone }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

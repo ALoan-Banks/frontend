@@ -5,7 +5,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { AccountComponent } from './components/account/account.component';
 import { HomeComponent } from './components/home/home.component';
 import { IncomeComponent } from './components/income/income.component';
-
+import { RecentTransactionsComponent } from './components/recent-transactions/recent-transactions.component';
+import { UserprofileComponent } from './components/userprofile/userprofile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -13,11 +14,13 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'account', component: AccountComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'income', component: IncomeComponent}
+  { path: 'income', component: IncomeComponent },
+  { path: 'recent/transactions', component: RecentTransactionsComponent },
+  { path: 'user/profile', component: UserprofileComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

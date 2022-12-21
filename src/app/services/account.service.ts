@@ -8,7 +8,7 @@ import { Transaction } from '../models/transaction';
 @Injectable({
   providedIn: 'root',
 })
-export class AccountService {
+export class AccountService { //import AccountService into user profile component
   userId!: string;
   accountUrl: string = environment.url + 'account';
   accountId: string = '';
@@ -17,7 +17,7 @@ export class AccountService {
     this.refreshUser();
   }
 
-  getAccount(): Observable<Account> {
+  getAccount(): Observable<Account> { //use this method to get the account to populate the user profile
     this.refreshUser();
     return this.http.get<Account>(this.accountUrl + `/${this.userId}`, {
       headers: environment.headers,
@@ -35,6 +35,19 @@ export class AccountService {
     );
   }
 
+  getRecentTransactions(
+    accountId: string,
+    limit: number
+  ): Observable<Transaction[]> {
+    return this.http.get<Transaction[]>(
+      this.accountUrl + `/${accountId}/${limit}/transactionTop`,
+      {
+        headers: environment.headers,
+        withCredentials: environment.withCredentials,
+      }
+    );
+  }
+
   getIncomes(accountId: string): Observable<Transaction[]> {
     return this.http.get<Transaction[]>(
       this.accountUrl + `/${accountId}/income`,
@@ -42,7 +55,7 @@ export class AccountService {
         headers: environment.headers,
         withCredentials: environment.withCredentials,
       }
-    )
+    );
   }
 
   upsertAccount(account: Account): Observable<Account> {

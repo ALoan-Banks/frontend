@@ -1,155 +1,187 @@
-<div class="flex justify-center items-center p-4 min-h-screen">
+<div
+  class="flex justify-center items-center p-4 min-h-screen dark:text-gray-100"
+>
   <div
-    class="flex flex-col justify-between items-center bg-white shadow-md rounded-lg gap-3 p-4"
+    class="flex flex-col justify-between items-center bg-white dark:bg-slate-700 shadow-lg rounded-lg gap-3 p-6"
   >
-    <img id="revImg" src="../../../assets/images/rev-logo.png" alt="Revature" />
-    <h2 class="font-semibold py-3">New Banking Account Registration</h2>
-    <form
-      class="flex flex-col gap-6"
-      [formGroup]="form"
-      (ngSubmit)="attemptRegister()"
+    <div
+      class="flex flex-row items-center gap-1 text-[#3d3d3d] dark:text-gray-100 pt-3 pb-1"
     >
-      <!-- email -->
-      <div class="flex flex-col gap-2">
-        <label class="font-medium" for="validationDefaultUsername"
-          >Email Address:
-          <span
-            *ngIf="
-              form.controls['email'].invalid &&
-              !form.controls['email'].touched &&
-              form.controls['email'].value.length > 0
-            "
-          >
-            Please enter a valid email address.
-          </span></label
-        >
-        <div class="">
-          <input
-            type="text"
-            class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 placeholder:text-lg placeholder:font-semibold focus:outline-none"
-            formControlName="email"
-            placeholder="Email Address"
-            id="validationDefaultUsername"
-            aria-describedby="inputGroupPrepend2"
-            (blur)="resetTouched()"
-          />
-        </div>
-      </div>
+      <p class="border-2 text-5xl px-2 border-[#3d3d3d] dark:border-gray-100">
+        A
+      </p>
+      <p class="font-semibold text-2xl">Loan Banks</p>
+    </div>
+    <div class="max-w-[20%]">
+      <img
+        id="revImg"
+        src="../../../assets/images/rev-logo.png"
+        alt="Revature"
+      />
+    </div>
+    <h2 class="font-semibold py-3 dark:text-gray-100">
+      New Banking Account Registration
+    </h2>
+    <div class="flex justify-center items-center">
+      <form
+        class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full"
+        [formGroup]="form"
+        (ngSubmit)="attemptRegister()"
+      >
+        <!-- left input -->
+        <div class="grid grid-cols-1">
+          <!-- email -->
+          <div class="flex flex-col gap-2 py-2">
+            <label class="font-medium" for="validationDefaultUsername"
+              >Email Address:
+              <span
+                class="text-xs flex flex-wrap"
+                *ngIf="
+                  form.controls['email'].invalid &&
+                  !form.controls['email'].touched &&
+                  form.controls['email'].value.length > 0
+                "
+              >
+                Please enter a valid email address.
+              </span></label
+            >
+            <div class="">
+              <input
+                type="text"
+                class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 text-slate-800 placeholder:text-lg placeholder:font-semibold focus:outline-none"
+                formControlName="email"
+                placeholder="Email Address"
+                id="validationDefaultUsername"
+                aria-describedby="inputGroupPrepend2"
+                (blur)="resetTouched()"
+              />
+            </div>
+          </div>
 
-      <!-- password -->
-      <div class="flex flex-col gap-2">
-        <label class="font-medium" for="validationDefaultPassword"
-          >Password:</label
-        >
-        <div class="">
-          <input
-            type="password"
-            class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 placeholder:text-lg placeholder:font-semibold focus:outline-none"
-            formControlName="password"
-            id="validationDefaultPassword"
-            placeholder="Password"
-            aria-describedby="inputGroupPrepend2"
-          />
-        </div>
-      </div>
+          <!-- password -->
+          <div class="flex flex-col gap-2 py-2">
+            <label class="font-medium" for="validationDefaultPassword"
+              >Password:</label
+            >
+            <div class="">
+              <input
+                type="password"
+                class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 text-slate-800 text-slate-800 placeholder:text-lg placeholder:font-semibold focus:outline-none"
+                formControlName="password"
+                id="validationDefaultPassword"
+                placeholder="Password"
+                aria-describedby="inputGroupPrepend2"
+              />
+            </div>
+          </div>
 
-      <!-- date of birth -->
-      <div class="flex flex-col gap-2">
-        <label class="font-medium" for="validationDefaultDateOfBirth"
-          >Date of Birth:
-          <span class="text-gray-400 text-xs">e.x. MM-DD-YY</span></label
-        >
-        <div class="">
-          <input
-            type="text"
-            class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 placeholder:text-lg placeholder:font-semibold focus:outline-none"
-            placeholder="MM-DD-YY"
-            formControlName="dob"
-            id="validationDefaultDateOfBirth"
-            aria-describedby="inputGroupPrepend2"
-          />
-        </div>
-      </div>
+          <!-- first name -->
+          <div class="flex flex-col gap-2 py-2">
+            <label class="font-medium" for="validationDefaultFirstName"
+              >First Name:</label
+            >
+            <div class="">
+              <input
+                type="text"
+                class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 text-slate-800 text-slate-800 placeholder:text-lg placeholder:font-semibold focus:outline-none"
+                formControlName="firstName"
+                id="validationDefaultFirstName"
+                placeholder="First Name"
+                aria-describedby="inputGroupPrepend2"
+              />
+            </div>
+          </div>
 
-      <!-- first name -->
-      <div class="flex flex-col gap-2">
-        <label class="font-medium" for="validationDefaultFirstName"
-          >First Name:</label
-        >
-        <div class="">
-          <input
-            type="text"
-            class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 placeholder:text-lg placeholder:font-semibold focus:outline-none"
-            formControlName="firstName"
-            id="validationDefaultFirstName"
-            placeholder="First Name"
-            aria-describedby="inputGroupPrepend2"
-          />
+          <!-- last name -->
+          <div class="flex flex-col gap-2 py-2">
+            <label class="font-medium" for="validationDefaultLastName"
+              >Last Name:</label
+            >
+            <div class="">
+              <input
+                type="text"
+                class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 text-slate-800 text-slate-800 placeholder:text-lg placeholder:font-semibold focus:outline-none"
+                formControlName="lastName"
+                id="validationDefaultLastName"
+                placeholder="Last Name"
+                aria-describedby="inputGroupPrepend2"
+              />
+            </div>
+          </div>
         </div>
-      </div>
 
-      <!-- last name -->
-      <div class="flex flex-col gap-2">
-        <label class="font-medium" for="validationDefaultLastName"
-          >Last Name:</label
-        >
-        <div class="">
-          <input
-            type="text"
-            class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 placeholder:text-lg placeholder:font-semibold focus:outline-none"
-            formControlName="lastName"
-            id="validationDefaultLastName"
-            placeholder="Last Name"
-            aria-describedby="inputGroupPrepend2"
-          />
+        <!-- right input -->
+        <div class="grid grid-cols-1">
+          <!-- date of birth -->
+          <div class="flex flex-col gap-2 py-2">
+            <label class="font-medium" for="validationDefaultDateOfBirth"
+              >Date of Birth:
+              <span class="text-gray-400 text-xs">e.x. MM-DD-YY</span></label
+            >
+            <div class="">
+              <input
+                type="text"
+                class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 text-slate-800 text-slate-800 placeholder:text-lg placeholder:font-semibold focus:outline-none"
+                placeholder="MM-DD-YY"
+                formControlName="dob"
+                id="validationDefaultDateOfBirth"
+                aria-describedby="inputGroupPrepend2"
+              />
+            </div>
+          </div>
+
+          <!-- phone -->
+          <div class="flex flex-col gap-2 py-2">
+            <label class="font-medium" for="validationDefaultPhoneNumber"
+              >Phone Number:
+              <span class="text-gray-400 text-xs"
+                >e.x. 123-456-7890</span
+              ></label
+            >
+            <div class="">
+              <input
+                type="tel"
+                class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 text-slate-800 text-slate-800 placeholder:text-lg placeholder:font-semibold focus:outline-none"
+                formControlName="phone"
+                id="validationDefaultPhoneNumber"
+                placeholder="e.x. 123-456-7890"
+                aria-describedby="inputGroupPrepend2"
+              />
+            </div>
+          </div>
+
+          <!-- address -->
+          <div class="flex flex-col gap-2 py-2">
+            <label class="font-medium" for="validationDefaultAddress"
+              >Address:</label
+            >
+            <div class="">
+              <input
+                type="text"
+                class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 text-slate-800 text-slate-800 placeholder:text-lg placeholder:font-semibold focus:outline-none"
+                formControlName="address"
+                id="validationDefaultAddress"
+                placeholder="Address"
+                aria-describedby="inputGroupPrepend2"
+              />
+            </div>
+          </div>
+
+          <!-- buttons -->
+          <div class="flex flex-col gap-2 py-2">
+            <label class="font-medium invisible" for="">Address:</label>
+            <div class="">
+              <button
+                class="px-3 py-2 w-[90%] bg-white rounded-lg font-semibold border border-[#F36A26] bg-transparent dark:text-white text-slate-800 hover:bg-[#F36A26]"
+                type="submit"
+              >
+                Register
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <!-- phone -->
-      <div class="flex flex-col gap-2">
-        <label class="font-medium" for="validationDefaultPhoneNumber"
-          >Phone Number:
-          <span class="text-gray-400 text-xs">e.x. 123-456-7890</span></label
-        >
-        <div class="">
-          <input
-            type="tel"
-            class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 placeholder:text-lg placeholder:font-semibold focus:outline-none"
-            formControlName="phone"
-            id="validationDefaultPhoneNumber"
-            placeholder="e.x. 123-456-7890"
-            aria-describedby="inputGroupPrepend2"
-          />
-        </div>
-      </div>
-
-      <!-- address -->
-      <div class="flex flex-col gap-2">
-        <label class="font-medium" for="validationDefaultAddress"
-          >Address:</label
-        >
-        <div class="">
-          <input
-            type="text"
-            class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 placeholder:text-lg placeholder:font-semibold focus:outline-none"
-            formControlName="address"
-            id="validationDefaultAddress"
-            placeholder="Address"
-            aria-describedby="inputGroupPrepend2"
-          />
-        </div>
-      </div>
-
-      <!-- buttons -->
-      <div class="flex flex-col gap-2">
-        <button
-          class="bg-[#F26A26] px-3 py-1 rounded-lg font-semibold"
-          type="submit"
-        >
-          Register
-        </button>
-      </div>
-    </form>
+      </form>
+    </div>
     <p>{{ noticeMessage }}</p>
   </div>
 </div>
