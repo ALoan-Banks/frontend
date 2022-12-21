@@ -1,9 +1,15 @@
 <nav class="navbar bg-gray-100">
-    <div class="container-fluid">
-        <a class="navbar-brand" [routerLink]="['/home']"><img id="revicon" src="../../../assets/images/favicon.png" alt="Revature Icon">Revature Banking</a>
-        <form class="d-flex" role="search">
-            <button class="btn btn-outline-primary mr-5" (click)="profile();">Profile</button>
-            <button class="btn btn-outline-danger" (click)="logout();">Logout</button>
-        </form>
-    </div>
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/home']"
+      ><img
+        id="revicon"
+        src="../../../assets/images/favicon.png"
+        alt="Revature Icon"
+      />Revature Banking</a
+    >
+    <form class="d-flex" role="search">
+      <!-- <button class="btn btn-outline-primary mr-5" (click)="profile();">Profile</button> -->
+      <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
+    </form>
+  </div>
 </nav>
