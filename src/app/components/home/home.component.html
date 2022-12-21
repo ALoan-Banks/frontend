@@ -15,6 +15,23 @@
       >
         Account Details
       </button>
+
+      <button
+        class="btn btn-outline-secondary btn-lg"
+        *ngIf="accountExists"
+        [routerLink]="['/income']"
+      >
+        Income Details
+      </button>
+
+      <button
+        class="btn btn-outline-secondary btn-lg"
+        *ngIf="accountExists"
+        [routerLink]="['/recent/transactions']"
+      >
+        Recent Transactions
+      </button>
+
       <h1 *ngIf="accountExists">Balance: ${{ userAccount.balance }}</h1>
     </div>
     <p>{{ accountMessage }}</p>

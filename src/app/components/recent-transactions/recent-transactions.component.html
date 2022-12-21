@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+<div class="home-wrap">
+  <div class="account-wrap">
+    <h2>Recent Transactions:</h2>
+    <p>
+      I want to see the last
+      <select [(ngModel)]="selectedOption" (change)="onOptionChanged()">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option [(ngModel)]="selectedOption" value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      transactions
+    </p>
+    <div class="account-card">
+      <table class="table table-striped">
+        <caption>
+          Display Recent Transactions
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Type</th>
+            <th scope="col">Description</th>
+            <th scope="col">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transaction of recentTransactions">
+            <td>{{ transaction.type }}</td>
+            <td>{{ transaction.description }}</td>
+            <td>{{ transaction.amount }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p></p>
+    </div>
+  </div>
+</div>
