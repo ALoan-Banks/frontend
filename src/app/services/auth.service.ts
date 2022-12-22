@@ -48,4 +48,17 @@ export class AuthService {
       headers: environment.headers,
     });
   }
+
+  resetAccount(
+    email: string,
+    newPassword: string,
+    dob: string
+  ): Observable<User> {
+    const payload = { email: email, newPassword: newPassword, dob: dob };
+    console.log(payload);
+    return this.http.post<User>(this.authUrl + '/reset/password', payload, {
+      headers: environment.headers,
+      withCredentials: environment.withCredentials,
+    });
+  }
 }

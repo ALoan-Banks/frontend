@@ -1,1 +1,12 @@
-<router-outlet></router-outlet>
+<div
+  [class]="
+    'bg-gradient-to-b from-cyan-500 to-blue-500 dark:bg-gradient-to-tr dark:from-stone-800 dark:to-slate-800 min-h-screen ' +
+    isDarkMode
+  "
+>
+  <div
+    class="bg-gradient-to-b from-cyan-500 to-blue-500 dark:bg-gradient-to-tr dark:from-stone-800 dark:to-slate-800 min-h-screen"
+  >
+    <router-outlet></router-outlet>
+  </div>
+</div>

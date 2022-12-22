@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IncomeComponent } from './components/income/income.component';
 import { RecentTransactionsComponent } from './components/recent-transactions/recent-transactions.component';
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
+import { ResetAccountComponent } from './components/reset-account/reset-account.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UserprofileComponent } from './components/userprofile/userprofile.compo
     NavbarComponent,
     IncomeComponent,
     RecentTransactionsComponent,
-    UserprofileComponent
+    UserprofileComponent,
+    ResetAccountComponent,
   ],
   imports: [
     BrowserModule,

@@ -39,38 +39,37 @@
               <input
                 type="password"
                 class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 placeholder:text-lg placeholder:font-semibold focus:outline-none"
-                [formControl]="password"
+                [formControl]="newPassword"
                 id="validationDefaultPassword"
-                placeholder="Password"
+                placeholder="New Password"
                 aria-describedby="inputGroupPrepend2"
                 required
               />
             </div>
-            <div class="flex justify-end text-xs pt-1">
-              <button [routerLink]="['/reset/account']" class="hover:underline">
-                reset account
-              </button>
-            </div>
+          </div>
+          <!-- date of birth -->
+          <div class="">
+            <input
+              type="text"
+              class="p-2 rounded-lg bg-gray-200 placeholder:text-gray-400 text-slate-800 placeholder:text-lg placeholder:font-semibold focus:outline-none"
+              placeholder="MM-DD-YY"
+              [formControl]="dob"
+              id="validationDefaultDateOfBirth"
+              aria-describedby="inputGroupPrepend2"
+            />
           </div>
         </div>
         <div class="flex flex-row justify-between items-center">
           <button
-            class="bg-white px-3 py-1 rounded-lg font-semibold border border-[#F36A26] bg-transparent dark:text-white text-slate-800 hover:bg-[#F36A26]"
+            class="bg-white px-3 py-1 rounded-lg font-semibold border border-[#F36A26] bg-transparent dark:text-white text-slate-800 hover:bg-[#F36A26] w-full"
             type="submit"
-            (click)="attemptLogin(email.value, password.value)"
+            [routerLink]="['/login']"
+            (click)="resetPassword(email.value, newPassword.value, dob.value)"
           >
-            Login
-          </button>
-          <button
-            class="bg-white px-3 py-1 rounded-lg font-semibold border border-[#F36A26] bg-transparent dark:text-white text-slate-800 hover:bg-[#F36A26]"
-            type="submit"
-            [routerLink]="['/register']"
-          >
-            Register
+            Reset Account
           </button>
         </div>
       </form>
     </div>
-    <p>{{ noticeMessage }}</p>
   </div>
 </div>
