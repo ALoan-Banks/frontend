@@ -36,7 +36,7 @@ import { ResetAccountComponent } from './components/reset-account/reset-account.
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
