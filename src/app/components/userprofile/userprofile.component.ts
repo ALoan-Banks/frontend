@@ -6,13 +6,13 @@ import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-userprofile',
   templateUrl: './userprofile.component.html',
-  styleUrls: ['./userprofile.component.css']
+  styleUrls: ['./userprofile.component.css'],
 })
 export class UserprofileComponent implements OnInit {
+  constructor(private UserService: UserService, private router: Router) {}
 
-  constructor(private UserService: UserService, private router: Router) { }
-
-  currentAccount: User = { //waiting for Sergio to update User model on frontend
+  currentAccount: User = {
+    //waiting for Sergio to update User model on frontend
     id: 0,
     email: '',
     password: '',
@@ -29,5 +29,4 @@ export class UserprofileComponent implements OnInit {
       console.log(user);
     });
   }
-
 }
