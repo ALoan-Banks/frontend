@@ -1,5 +1,5 @@
 export const environment = {
-  production: true,
+  production: false,
   url: 'http://aloanbanksapp-env.eba-yuubmsje.us-east-1.elasticbeanstalk.com/',
   headers: {
     'Content-Type': 'application/json',
