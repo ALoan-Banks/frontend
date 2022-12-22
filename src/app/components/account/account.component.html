@@ -1,28 +1,68 @@
 <app-navbar></app-navbar>
 <div class="home-wrap p-4">
-    <div class="flex justify-start bg-red-300 dark:bg-slate-700 rounded-lg flex-col w-full p-5 dark:text-gray-100">
-        <h2 class="font-bold text-xl">Account Details: {{accountName.value}}</h2>
-        <h2 class="flex flex-row font-bold text-xl justify-center" [style]="balanceStyle">Balance: ${{balance.value}}</h2>
-        <button class="btn btn-outline-primary btn-lg" *ngIf="!createFormOpen" (click)="openCreateForm();">Add Transaction</button>
-          <form class="input-form" *ngIf="createFormOpen">
-                <div class="input-group mb-3">   
-                  <select class="form-select" [formControl]="txnType" aria-label="Default select example" style="width: 30px;">
-                    <option value="Expense">Expense (-)</option>
-                    <option value="Income">Income (+)</option>
-                  </select>            
-                  <span class="input-group-text">$</span>
-                  <input type="number" placeholder="Amount" [formControl]="txnAmount" class="form-control" aria-label="Amount (to the nearest dollar)">
-                </div>
-                <div class="input-group">
-                  <textarea class="form-control" [formControl]="txnDescription" placeholder="Account Description..." aria-label="With textarea"></textarea>
-                </div>
-                <button id="submitButton" class="btn btn-outline-secondary btn-lg" type="submit" (click)="addTransaction(txnAmount.value, txnDescription.value, txnType.value);">Add</button>
-          </form>
-        <div class="account-card rounded-lg"*ngFor="let txn of transactions">
-            <h2 class="font-bold text-xl p-3">{{txn.description}}</h2>
-            <h1 class="font-bold text-xl p-4">{{txn.type}}: ${{txn.amount}}</h1>
-        </div>
-        <p class="flex flex-row justify-center">{{accountMessage}}</p>
-        
+  <div
+    class="flex justify-start bg-gray-50 dark:bg-slate-700 rounded-lg flex-col w-full p-5 dark:text-gray-100 text-slate-700"
+  >
+    <div class="flex flex-row justify-between">
+      <h2 class="font-bold text-xl">
+        Account Details: {{ accountName.value }}
+      </h2>
+      <h2
+        class="flex flex-row font-bold text-xl justify-center"
+        [style]="balanceStyle"
+      >
+        Balance: ${{ balance.value }}
+      </h2>
     </div>
+    <button
+      class="bg-white px-3 py-1 my-3 rounded-lg font-semibold border border-[#F36A26] bg-transparent dark:text-white text-slate-800 hover:bg-[#F36A26]"
+      *ngIf="!createFormOpen"
+      (click)="openCreateForm()"
+    >
+      Add Transaction
+    </button>
+    <form class="input-form" *ngIf="createFormOpen">
+      <div class="input-group mb-3">
+        <select
+          class="form-select"
+          [formControl]="txnType"
+          aria-label="Default select example"
+          style="width: 30px"
+        >
+          <option value="Expense">Expense (-)</option>
+          <option value="Income">Income (+)</option>
+        </select>
+        <span class="input-group-text">$</span>
+        <input
+          type="number"
+          placeholder="Amount"
+          [formControl]="txnAmount"
+          class="form-control"
+          aria-label="Amount (to the nearest dollar)"
+        />
+      </div>
+      <div class="input-group">
+        <textarea
+          class="form-control"
+          [formControl]="txnDescription"
+          placeholder="Account Description..."
+          aria-label="With textarea"
+        ></textarea>
+      </div>
+      <button
+        id="submitButton"
+        class="btn btn-outline-secondary btn-lg"
+        type="submit"
+        (click)="
+          addTransaction(txnAmount.value, txnDescription.value, txnType.value)
+        "
+      >
+        Add
+      </button>
+    </form>
+    <div class="account-card rounded-lg" *ngFor="let txn of transactions">
+      <h2 class="font-bold text-xl p-3">{{ txn.description }}</h2>
+      <h1 class="font-bold text-xl p-4">{{ txn.type }}: ${{ txn.amount }}</h1>
+    </div>
+  </div>
 </div>

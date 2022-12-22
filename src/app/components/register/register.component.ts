@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
   form: FormGroup = new FormGroup({});
 
   noticeMessage: string = '';
+  isDisabled: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -48,32 +49,38 @@ export class RegisterComponent implements OnInit {
   }
 
   attemptRegister() {
-    if (this.form.valid) {
-      this.authService
-        .register(
-          this.form.value.email,
-          this.form.value.password,
-          this.form.value.dob,
-          this.form.value.address,
-          this.form.value.firstName,
-          this.form.value.lastName,
-          this.form.value.phone
-        )
-        .subscribe({
-          next: (response) => {
-            localStorage.setItem('current-user', '' + response.id);
-          },
-          error: (err) => {
-            if (err.status == 400) {
-              this.noticeMessage = 'Please Check Your Registration Info';
-            } else {
-              this.noticeMessage = 'Server Error';
-            }
-          },
-          complete: () => {
-            this.router.navigateByUrl('/login');
-          },
-        });
-    }
+    this.authService
+      .register(
+        this.form.value.email,
+        this.form.value.password,
+        this.form.value.dob,
+        this.form.value.address,
+        this.form.value.firstName,
+        this.form.value.lastName,
+        this.form.value.phone
+      )
+      .subscribe({
+        next: (response) => {
+          localStorage.setItem('current-user', '' + response.id);
+        },
+        error: (err) => {
+          if (err.status == 400) {
+            this.noticeMessage = 'Please Check Your Registration Info';
+          } else {
+            this.noticeMessage = 'Server Error';
+          }
+        },
+        complete: () => {
+          this.router.navigateByUrl('/login');
+        },
+      });
+  }
+
+  onClick() {
+    this.isDisabled = true;
+    this.attemptRegister();
+    setTimeout(() => {
+      this.isDisabled = false;
+    }, 3000); // 3 seconds
   }
 }
